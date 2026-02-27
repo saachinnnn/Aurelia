@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Aurelia"
+version = "0.1.0"
+description = "A CLI-powered RAG engine that lets you have intelligent, cited conversations with any codebase using AST-aware chunking and hybrid search."
+readme = "README.md"
+authors = [
+    { name = "sachin", email = "saachinnnn7@gmail.com" },
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    # Core framework
+    "llama-index-core>=0.11",
+    
+    # LlamaIndex integrations
+    "llama-index-vector-stores-lancedb",
+    "llama-index-embeddings-voyageai",
+    "llama-index-llms-gemini",
+    "llama-index-retrievers-bm25",
+    
+    # Code parsing
+    "tree-sitter>=0.21",
+    "tree-sitter-python>=0.21",
+    
+    # Git integration
+    "gitpython>=3.1",
+    
+    # CLI
+    "typer>=0.9",
+    "rich>=13.0",
+    
+    # Config & validation
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    
+    # Evaluation
+    "ragas>=0.1",
+]
+
+[project.optional-dependencies]
+# Install with: pip install aurelia[local]
+local = [
+    "llama-index-llms-ollama",
+    "llama-index-embeddings-huggingface",
+]
+
+[project.scripts]
+aurelia = "aurelia.cli.main:app"
