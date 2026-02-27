@@ -1,0 +1,59 @@
+# Aurelia Configuration File
+# This file is used to store the configuration of Aurelia and mainly the preferences of the user when he uses the application.
+
+project_name : "Aurelia"
+data_dir : "./data" # This is the default directory where the data will be stored.
+
+# ----------------------------
+# LLM settings
+# ----------------------------
+
+llm:
+    provider : "gemini" # "gemini" or "ollama"
+    model : "gemini-3-flash-preview" # "gemini-3-flash-preview" or "llama3.2"
+    api_key : "" # Only for gemini
+    temperature : 0.2
+    top_p : 1.0
+    max_output_tokens : 512
+    timeout_s : 60.0
+    max_retries : 2
+    stream : true
+    base_url : "http://localhost:11434" # Only for ollama
+
+#-----------------------------
+# Embedding settings
+# ----------------------------
+
+embedding:
+    provider : "voyageai" # "voyageai" or "bge"
+    model : "voyage-code-3" # "voyage-code-3" or "BGE-M3"
+    api_key : "" # Only for voyageai
+    batch_size : 64
+    timeout_s : 60.0
+    dimensions : 1024
+    normalize : true
+
+# ----------------------------
+# Retrieval settings
+# ----------------------------
+retrieval:
+    provider : "gemini" # "gemini" or "ollama"
+    model : "gemini-3-flash-preview" # "gemini-3-flash-preview" or "llama3.2"
+    api_key : "" # Only for gemini
+    temperature : 0.2
+    top_p : 1.0
+    max_output_tokens : 512
+    timeout_s : 60.0
+    max_retries : 2
+    stream : true
+    base_url : "http://localhost:11434" # Only for ollama
+
+# ----------------------------
+# Chunking settings
+# ----------------------------
+chunking:
+    strategy : "hierarchical" # "hierarchical" or "flat"
+    max_chunk_size : 512
+    max_overlap : 75
+    language : "python"
+
