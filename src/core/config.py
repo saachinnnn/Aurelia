@@ -22,7 +22,7 @@ CONFIG_PATH = CONFIG_DIR / "config.yaml"
 def load_config() -> AureliaConfig:
     if CONFIG_PATH.exists():
         with open(CONFIG_PATH, "r") as f:
-            data = yaml.safe_load(f) or {}
+            data = yaml.safe_load(f) or {} # Edge case instead of return None.
             return AureliaConfig(**data)
     else:
         return AureliaConfig()

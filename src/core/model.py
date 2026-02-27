@@ -20,6 +20,19 @@ class ChunkType(str, Enum):
     METHOD = "method"
     BLOCK = "block"
 
+# This is for giving various options for file classification that can be used to imply different forms of chunking later on.
+class FileClassification(str, Enum):
+    PARSE = "parse"
+    MARKDOWN = "markdown"
+    CONFIG = "config"
+    SKIP = "skip"
+
+# Validation schema for the output of walker.py.
+class FileInfo(BaseModel):
+    absolute_path: str
+    relative_path: str
+    classification: FileClassification
+
 # Now we are going to define the structure of a chunk.
 class ChunkMetadata(BaseModel):
     file_path : str
