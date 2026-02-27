@@ -3,8 +3,7 @@ import pathspec
 from pathlib import Path
 from typing import List, Optional
 
-# Add src to path if needed for imports, assuming this will be run from root or installed
-from src.core.model import FileInfo, FileClassification
+from aurelia.core.model import FileInfo, FileClassification
 
 class RepoWalker:
     """

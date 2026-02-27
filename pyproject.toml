@@ -32,6 +32,8 @@ dependencies = [
     # CLI
     "typer>=0.9",
     "rich>=13.0",
+    "pyfiglet>=0.8",
+    "prompt-toolkit>=3.0",
     
     # Config & validation
     "pydantic>=2.0",
@@ -47,6 +49,9 @@ local = [
     "llama-index-llms-ollama",
     "llama-index-embeddings-huggingface",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["aurelia"]
 
 [project.scripts]
 aurelia = "aurelia.cli.main:app"

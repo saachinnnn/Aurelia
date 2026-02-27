@@ -1,13 +1,9 @@
-import sys
 import tempfile
 import shutil
 from pathlib import Path
 
-# Add src to path
-sys.path.append(str(Path(__file__).parent.parent))
-
-from src.ingestion.walker import RepoWalker
-from src.core.model import FileClassification
+from aurelia.ingestion.walker import RepoWalker
+from aurelia.core.model import FileClassification
 
 def setup_test_repo(base_dir: Path):
     """Creates a mock repository structure to test the walker."""

@@ -1,3 +1,5 @@
 aurelia_venv/
 data/
 system_architecture/
+# Internal tools
+.claude/

@@ -1,11 +1,5 @@
-import sys
-from pathlib import Path
-
-# Add src to path so we can import modules
-sys.path.append(str(Path(__file__).parent.parent))
-
-from src.core.model import AureliaConfig
-from src.core.config import save_config, load_config, CONFIG_PATH
+from aurelia.core.model import AureliaConfig
+from aurelia.core.config import save_config, load_config, CONFIG_PATH
 
 def test_config_roundtrip():
     print("Starting Configuration Roundtrip Verification...")
