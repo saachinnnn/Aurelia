@@ -4,8 +4,8 @@ from pathlib import Path
 # Add src to path
 sys.path.append(str(Path(__file__).parent.parent))
 
-from src.ingestion.parser import AureliaParser
-from src.core.model import ChunkType
+from aurelia.ingestion.parser import AureliaParser
+from aurelia.core.model import ChunkType
 
 def test_python_parsing():
     print("Starting Tree-Sitter Parser Verification...")
@@ -25,8 +25,13 @@ class MockClass:
     def __init__(self):
         self.value = 42
         
+    @property
     def do_something(self):
         print("Doing something!")
+
+@staticmethod
+def my_decorated_func():
+    pass
 """
 
     parser = AureliaParser()
@@ -39,7 +44,7 @@ class MockClass:
         
         expected_counts = {
             ChunkType.MODULE: 1,
-            ChunkType.FUNCTION: 1,
+            ChunkType.FUNCTION: 2,
             ChunkType.CLASS: 1
         }
         
